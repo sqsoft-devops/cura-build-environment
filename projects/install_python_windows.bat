@@ -33,34 +33,34 @@ echo bindir %BINDIR%
 
 echo Install binaries to DESTDIR/bin
 
-mkdir %DESTDIR%\bin
+mkdir "%DESTDIR%\bin"
 
 echo %BINDIR%\python.exe
 
-copy /Y %BINDIR%\python.exe %DESTDIR%\bin
-copy /Y %BINDIR%\*.dll %DESTDIR%\bin
+copy /Y "%BINDIR%\python.exe" "%DESTDIR%\bin"
+copy /Y "%BINDIR%\*.dll" "%DESTDIR%\bin"
 
 echo Install libraries to DESTDIR/lib
 
-mkdir %DESTDIR%\lib
+mkdir "%DESTDIR%\lib"
 
-copy /Y %BINDIR%\*.pyd %DESTDIR%\lib
+copy /Y "%BINDIR%\*.pyd" "%DESTDIR%\lib"
 
-xcopy /Y /E %SOURCEDIR%\lib\* %DESTDIR%\lib
+xcopy /Y /E "%SOURCEDIR%\lib\*" "%DESTDIR%\lib"
 
 echo Install import libraries to DESTDIR/libs
 
-mkdir %DESTDIR%\libs
+mkdir "%DESTDIR%\libs"
 
-copy /Y %BINDIR%\*.lib %DESTDIR%\libs
+copy /Y "%BINDIR%\*.lib" "%DESTDIR%\libs"
 
 echo Install headers into DESTDIR/include
 
-mkdir %DESTDIR%\include
+mkdir "%DESTDIR%\include"
 
-copy /Y %SOURCEDIR%\include\* %DESTDIR%\include
+copy /Y "%SOURCEDIR%\include\*" "%DESTDIR%\include"
 
-copy /Y %SOURCEDIR%\PC\pyconfig.h %DESTDIR%\include
+copy /Y "%SOURCEDIR%\PC\pyconfig.h" "%DESTDIR%\include"
 
 exit /B 0
 
