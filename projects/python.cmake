@@ -63,16 +63,16 @@ endif()
 
 # Make sure pip and setuptools are installed into our new Python
 ExternalProject_Add_Step(Python ensurepip
-    COMMAND ${Python3_EXECUTABLE} -m ensurepip
+    COMMAND "${Python3_EXECUTABLE}" -m ensurepip
     DEPENDEES install
 )
 
 ExternalProject_Add_Step(Python upgrade_packages
-    COMMAND ${Python3_EXECUTABLE} -m pip install pip==19.3.1
-    COMMAND ${Python3_EXECUTABLE} -m pip install setuptools==41.4.0
-    COMMAND ${Python3_EXECUTABLE} -m pip install pytest==5.2.1
-    COMMAND ${Python3_EXECUTABLE} -m pip install pytest-benchmark==3.2.2
-    COMMAND ${Python3_EXECUTABLE} -m pip install pytest-cov==2.8.1
-    COMMAND ${Python3_EXECUTABLE} -m pip install mypy==0.740
+    COMMAND "${Python3_EXECUTABLE}" -m pip install pip==19.3.1
+    COMMAND "${Python3_EXECUTABLE}" -m pip install setuptools==41.4.0
+    COMMAND "${Python3_EXECUTABLE}" -m pip install pytest==5.2.1
+    COMMAND "${Python3_EXECUTABLE}" -m pip install pytest-benchmark==3.2.2
+    COMMAND "${Python3_EXECUTABLE}" -m pip install pytest-cov==2.8.1
+    COMMAND "${Python3_EXECUTABLE}" -m pip install mypy==0.740
     DEPENDEES ensurepip
 )
