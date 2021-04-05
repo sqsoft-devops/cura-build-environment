@@ -4,8 +4,8 @@ LABEL windows_version="1809" \
       architecture="amd64" \
       vs_version="2015" \
       windows_sdk_version="8.1" \
-      python_version="3.5.7" \
-      qt_version="5.10"
+      python_version="3.8.8" \
+      qt_version="5.15.2"
 
 ARG CURA_BUILD_ENV_BUILD_TYPE=Release
 ARG CURA_BUILD_ENV_PATH=C:\\cura-build-environment
@@ -27,7 +27,6 @@ RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
 
 # Install other build tools
 #  - perl, svn, and nasm are needed by OpenSSL for Python
-#  - MinGW64 8.1.0 posix seh.
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
     choco install -y 7zip; \
     choco install -y cmake --installargs 'ADD_CMAKE_TO_PATH=System'; \
@@ -36,11 +35,18 @@ RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
     choco install -y strawberryperl; \
     choco install -y tortoisesvn; \
     choco install -y nasm; \
-    choco install -y mingw; \
-	choco install -y make; \
     choco install -y doxygen.install; \
     choco install -y poedit
+    
+RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \ 
+    Invoke-WebRequest `
+    -Uri 'https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z/download?' `
+    -OutFile 'mingw-8.1.0.7z'
 	
+RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
+    7z x .\mingw-8.1.0.7z -o'C:\'; \
+    Remove-Item -Force .\mingw-8.1.0.7z
+
 ADD . "${CURA_BUILD_ENV_WORK_DIR}"/src
 
 # Get WiX Toolset 3.11.2
