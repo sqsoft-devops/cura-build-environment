@@ -5,7 +5,7 @@ $newPath = "$env:Path"
 $newPath = "$newPath" + ";C:\Program Files (x86)\wixtoolset"
 $newPath = "$newPath" + ";C:\Program Files (x86)\NSIS"
 $newPath = "$newPath" + ";C:\Program Files (x86)\Poedit\GettextTools\bin"
-$newPath = "$newPath" + ";C:\mingw-w64\mingw\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\mingw64\bin"
+$newPath = "$newPath" + ";C:\mingw\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\mingw64\bin"
 
 [Environment]::SetEnvironmentVariable("Path", "$newPath", [System.EnvironmentVariableTarget]::Machine)
 
