@@ -25,7 +25,7 @@ endif()
 
 ExternalProject_Add(pynest2d
     GIT_REPOSITORY https://github.com/Ultimaker/pynest2d.git
-    GIT_TAG origin/master
+    GIT_TAG origin/${CURA_PYNEST2D_BRANCH_OR_TAG}
     GIT_SHALLOW 1
     CMAKE_COMMAND ${pylib_cmake_command}
     CMAKE_ARGS -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
