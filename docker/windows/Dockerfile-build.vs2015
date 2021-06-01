@@ -6,6 +6,9 @@ ARG CURA_BUILD_ENV_WORK_DIR=C:\\temp\\cura-build-environment
 ARG CURA_ARCUS_BRANCH_OR_TAG=master
 ARG CURA_SAVITAR_BRANCH_OR_TAG=master
 
+# Copy the sources
+ADD . "${CURA_BUILD_ENV_WORK_DIR}"/src
+
 # Set up environment variables.
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
     "%CURA_BUILD_ENV_WORK_DIR%"\\src\\docker\\windows\\setup_envvars.ps1
