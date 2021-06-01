@@ -45,8 +45,8 @@ RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
     -OutFile 'mingw-8.4.0.zip'
 	
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
-    7z x .\mingw-8.4.0.7z -o'C:\'; \
-    Remove-Item -Force .\mingw-8.4.0.7z
+    7z x .\mingw-8.4.0.zip -o'C:\'; \
+    Remove-Item -Force .\mingw-8.4.0.zip
 
 # Get WiX Toolset 3.11.2
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
