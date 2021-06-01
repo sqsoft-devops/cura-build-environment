@@ -47,6 +47,8 @@ RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
     7z x .\mingw-8.4.0.zip -o'C:\'; \
     Remove-Item -Force .\mingw-8.4.0.zip
+    
+ADD . "${CURA_BUILD_ENV_WORK_DIR}"/src
 
 # Get WiX Toolset 3.11.2
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
@@ -55,4 +57,7 @@ RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
 # Set up environment variables.
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
     "%CURA_BUILD_ENV_WORK_DIR%"\\src\\docker\\windows\\setup_envvars.ps1
-
+    
+# Remove the temporary directory.
+RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
+    Remove-Item -Recurse -Force "%CURA_BUILD_ENV_WORK_DIR%"
