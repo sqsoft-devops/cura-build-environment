@@ -47,8 +47,6 @@ RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
     7z x .\mingw-8.1.0.7z -o'C:\'; \
     Remove-Item -Force .\mingw-8.1.0.7z
 
-ADD . "${CURA_BUILD_ENV_WORK_DIR}"/src
-
 # Get WiX Toolset 3.11.2
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
     "%CURA_BUILD_ENV_WORK_DIR%"\\src\\docker\\windows\\install_wixtoolset.ps1
