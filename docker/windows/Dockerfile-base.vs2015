@@ -37,15 +37,16 @@ RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
     choco install -y nasm; \
     choco install -y doxygen.install; \
     choco install -y poedit
-    
-RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \ 
+
+# Install mingw
+RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
     Invoke-WebRequest `
-    -Uri 'https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-posix/seh/x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z/download?' `
-    -OutFile 'mingw-8.1.0.7z'
+    -Uri 'https://software.ultimaker.com/cura-binary-dependencies/mingw-w64-x86_64-8.4.0-7.0.0-r1.zip' `
+    -OutFile 'mingw-8.4.0.zip'
 	
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
-    7z x .\mingw-8.1.0.7z -o'C:\'; \
-    Remove-Item -Force .\mingw-8.1.0.7z
+    7z x .\mingw-8.4.0.7z -o'C:\'; \
+    Remove-Item -Force .\mingw-8.4.0.7z
 
 # Get WiX Toolset 3.11.2
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
