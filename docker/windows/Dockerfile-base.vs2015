@@ -40,9 +40,7 @@ RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
 
 # Install mingw
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
-    Invoke-WebRequest `
-    -Uri 'https://software.ultimaker.com/cura-binary-dependencies/mingw-w64-x86_64-8.4.0-7.0.0-r1.zip' `
-    -OutFile 'mingw-8.4.0.zip'
+    Invoke-WebRequest -Uri 'https://software.ultimaker.com/cura-binary-dependencies/mingw-w64-x86_64-8.4.0-7.0.0-r1.zip' -OutFile 'mingw-8.4.0.zip'
 	
 RUN powershell.exe -NoLogo -ExecutionPolicy Bypass -Command \
     7z x .\mingw-8.4.0.zip -o'C:\'; \
