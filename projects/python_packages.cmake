@@ -116,7 +116,7 @@ if(BUILD_OS_WINDOWS)
     add_custom_command(TARGET PythonPackages POST_BUILD
         COMMAND ${Python3_EXECUTABLE} -m pip install comtypes==1.1.7
         # pywin32 is required to provide the keyring library with access to the Windows Credential Manager
-        COMMAND ${Python3_EXECUTABLE} -m pip install pywin32==300
+        COMMAND ${Python3_EXECUTABLE} -m pip install pywin32==301
         COMMENT "Install Windows-specific py-packages: comtypes, pywin32"
     )
 endif()
