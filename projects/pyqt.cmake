@@ -26,8 +26,8 @@ if(NOT BUILD_OS_WINDOWS)
     endif()
 
     ExternalProject_Add(PyQt
-        URL https://files.pythonhosted.org/packages/28/6c/640e3f5c734c296a7193079a86842a789edb7988dca39eab44579088a1d1/PyQt5-5.15.2.tar.gz
-        URL_HASH SHA256=372b08dc9321d1201e4690182697c5e7ffb2e0770e6b4a45519025134b12e4fc
+        URL https://files.pythonhosted.org/packages/63/14/342909751d8cb6931ca1548a9834f5f581c69c2bc5836e65a8aeee9f1bb7/PyQt6-6.2.0.tar.gz
+        URL_HASH SHA256=142ce7fa574d7ebb13fb0a2ebd18c86087c35829f786c094a71a0749155d8fee
         CONFIGURE_COMMAND ${pyqt_command}
         BUILD_IN_SOURCE 1
     )
