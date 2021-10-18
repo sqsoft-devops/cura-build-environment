@@ -26,8 +26,6 @@ set(qt_options
     -no-sql-odbc
     -no-sql-psql
     -no-sql-sqlite
-    -no-sql-sqlite2
-    -no-sql-tds
     -skip qtconnectivity
     -skip qtdoc
     -skip qtlocation
