@@ -190,9 +190,9 @@ lxml==4.6.3; \
     sys_platform=="linux" \
     --hash=sha256:1b38116b6e628118dea5b2186ee6820ab138dbb1e24a13e478490c7db2f326ae
 
-https://software.ultimaker.com/cura-binary-dependencies/lxml-4.6.3-cp310-cp310-macosx_10_14_x86_64.whl; \
+https://software.ultimaker.com/cura-binary-dependencies/lxml-4.6.3-cp39-cp39-macosx_10_14_x86_64.whl; \
     sys_platform=="darwin" \
-    --hash=sha256:ca5d3dbb76312249d2e9516fc05a3694dd042501c27be8e62bf2095549932d57
+    --hash=sha256:cda33ef71b2e8d7973d7cb62387b49f0cba6a66f289ba14e4bd674860a57031e
 
 https://software.ultimaker.com/cura-binary-dependencies/lxml-4.6.3-cp38-cp38-win_amd64.whl; \
     sys_platform=="win32" \
