@@ -20,8 +20,8 @@ if(BUILD_OS_WINDOWS)
     set(python_patch_command ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/projects/python_libffi_patch.props" "${CMAKE_CURRENT_BINARY_DIR}/Python-prefix/src/Python/PCbuild/libffi.props")
 
     ExternalProject_Add(Python
-        URL https://www.python.org/ftp/python/3.10.0/Python-3.10.0.tgz
-        URL_HASH SHA256=c4e0cbad57c90690cb813fb4663ef670b4d0f587d8171e2c42bd4c9245bd2758
+        URL https://www.python.org/ftp/python/3.9.7/Python-3.9.7.tgz
+        URL_HASH SHA256=a838d3f9360d157040142b715db34f0218e535333696a5569dc6f854604eb9d1
         PATCH_COMMAND ${python_patch_command}
         # The python3.8 build configuration still downloads and installs OpenSSL v1.1.1k from the cpython-bin-deps repository.
         # Thus, we have to force it to use OpenSSL v1.1.1l, as it fixes several security risks
@@ -43,8 +43,8 @@ if(BUILD_OS_LINUX)
 endif()
 
 ExternalProject_Add(Python
-    URL https://www.python.org/ftp/python/3.10.0/Python-3.10.0.tgz
-    URL_HASH SHA256=c4e0cbad57c90690cb813fb4663ef670b4d0f587d8171e2c42bd4c9245bd2758
+    URL https://www.python.org/ftp/python/3.9.7/Python-3.9.7.tgz
+    URL_HASH SHA256=a838d3f9360d157040142b715db34f0218e535333696a5569dc6f854604eb9d1
     CONFIGURE_COMMAND "${python_configure_command}"
     BUILD_COMMAND ${python_build_command}
     INSTALL_COMMAND ${python_install_command}
