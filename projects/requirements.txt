@@ -210,11 +210,13 @@ comtypes==1.1.7; \
     sys_platform=="win32" \
     --hash=sha256:c9d59f57d559613940f22da54d70add066faa23b4fa9b5cd95facdc501a63b0b
 PyQt6-Qt6==6.2.0; \
+    sys_platform=="win32" \
     --hash=sha256:ed1f73e40deddadb10781ddc40672e14c2e7309ca389263c081ed702267451c7 \
     --hash=sha256:7749e44ab5ca98aba766b283bcd08ebeb0ffb09e427efc7beac0c571525f3c5e \
     --hash=sha256:c0d4c1b1b7bd0c9f21a6284d6aa53c041cb36dc464acb403cbe1bc8845090d30 \
     --hash=sha256:06dc7289614f08e1fa28ac5abbbbf2d61305a416b8183045b9c535321c7309c
 PyQt6==6.2.0; \
+    sys_platform=="win32" \
     --hash=sha256:8d883b66d2b902862b90ff51696e408aa618f1e4e9d392c98f13925b5983068b \
     --hash=sha256:c43f4bb7dbe58b262b88da137de54a140091a5273b3333406a76507551c34321 \
     --hash=sha256:ea4c1502214eed9090937f46ed33aca054ddc46240d6c5ce09886d1d6886b50e \
