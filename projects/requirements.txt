@@ -130,9 +130,9 @@ ifaddr==0.1.7 \
     --hash=sha256:d1f603952f0a71c9ab4e705754511e4e03b02565bc4cec7188ad6415ff534cd3
 
 # On Windows we use a custom compile Numpy wheel (MKL)
-https://software.ultimaker.com/cura-binary-dependencies/numpy-1.20.2+mkl-cp38-cp38-win_amd64.whl; \
+https://software.ultimaker.com/cura-binary-dependencies/numpy-1.21.4%2Bmkl-cp310-cp310-win_amd64.whl; \
     sys_platform=="win32" \
-    --hash=sha256:679bf340353b286bb93b7e53ef73c32abbba040f34e15f16b02772807f7613fa
+    --hash=sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 
 numpy==1.20.2; \
     sys_platform!="win32" \
@@ -147,9 +147,9 @@ numpy==1.20.2; \
     --hash=sha256:edb1f041a9146dcf02cd7df7187db46ab524b9af2515f392f337c7cbbf5b52cd
 
 # We use a custom compiled Scipy wheel on Windows, and a different patch version for each OS. TODO: Check why
-https://software.ultimaker.com/cura-binary-dependencies/scipy-1.6.3-cp38-cp38-win_amd64.whl; \
+https://software.ultimaker.com/cura-binary-dependencies/scipy-1.7.3-cp310-cp310-win_amd64.whl; \
    sys_platform=="win32" \
-    --hash=sha256:a5ce19555a42e43e42cae72eb4c108c5833a0499c6b0054d81f2a877eb1d8f9a
+    --hash=sha256:c9eb4ba37940df83c23358a357ff933171cd93a7e5541bc4419f8ae0c75d7611
 
 scipy==1.6.3; \
     sys_platform!="win32" \
@@ -174,9 +174,9 @@ scipy==1.6.3; \
     --hash=sha256:a75b014d3294fce26852a9d04ea27b5671d86736beb34acdfc05859246260707
 
 # On Windows we us a custom compiled Shapely wheel. TODO: Check why
-https://software.ultimaker.com/cura-binary-dependencies/Shapely-1.8.0-cp38-cp38-win_amd64.whl; \
+https://software.ultimaker.com/cura-binary-dependencies/Shapely-1.8.0-cp310-cp310-win_amd64.whl; \
    sys_platform=="win32" \
-    --hash=sha256:ba01bcba02bfd3bc152c65c08cf57e8dbd39b8012de36db839dae9c073de19d0
+    --hash=sha256:69c909e92e8d1cbd236b9f5528dbdc4958df9bef114413f83cea1d3c610fc59b
 
 shapely==1.8.0; \
     sys_platform!="win32" \
@@ -225,7 +225,7 @@ pywin32-ctypes==0.2.0; \
 comtypes==1.1.7; \
     sys_platform=="win32" \
     --hash=sha256:c9d59f57d559613940f22da54d70add066faa23b4fa9b5cd95facdc501a63b0b
-    
+
 PyQt6-Qt6==6.2.0; \
     sys_platform=="win32" \
     --hash=sha256:ed1f73e40deddadb10781ddc40672e14c2e7309ca389263c081ed702267451c7 \
