@@ -3,12 +3,3 @@ add_custom_target(PythonPackagesGeneral ALL
     COMMENT "Install Python packages"
     DEPENDS Python
 )
-
-if(BUILD_OS_WINDOWS)
-    add_custom_command(
-        TARGET PythonPackagesGeneral POST_BUILD
-        COMMAND powershell -Command "(gc hooks.py) -replace 'libffi-7.dll', 'libffi-8.dll' | Out-File -encoding ASCII hooks.py"
-        COMMENT "Make libffi-8.dll visible to cx_Freeze"
-        WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/lib/site-packages/cx_Freeze
-    )
-endif()
