@@ -3,7 +3,7 @@
 # make sure you use the verbose flag and personally inspect the hosts that were used when generating
 # When updating a major Python version these need to be updates as well
 
-cx-Freeze==6.5.3 \
+cx-Freeze==6.9.0 \
     --hash=sha256:7e2592fe1b65bd45c729934b391579fde5aed6b4c9e3e4d990738fc7fec718ea \
     --hash=sha256:d3bb71349dace28e545eb1e4549255f0dd915f925f8505b1a342b3d2fbd4734b \
     --hash=sha256:e0d03cabcdf9b9c21354807ed9f06fa9481a8fd5a0838968a830f01a70820ff1
@@ -189,7 +189,7 @@ Automat==20.2.0 \
     --hash=sha256:7979803c74610e11ef0c0d68a2942b152df52da55336e0c9d58daf1831cbdf33 \
     --hash=sha256:b6feb6455337df834f6c9962d6ccf771515b7d939bca142b29c20c2376bc6111
 twisted-iocpsupport==1.0.2; \
-    sys_platform=="win32"
+    sys_platform=="win32" \
     --hash=sha256:306becd6e22ab6e8e4f36b6bdafd9c92e867c98a5ce517b27fdd27760ee7ae41 \
     --hash=sha256:3c61742cb0bc6c1ac117a7e5f422c129832f0c295af49e01d8a6066df8cfc04d \
     --hash=sha256:72068b206ee809c9c596b57b5287259ea41ddb4774d86725b19f35bf56aa32a9 \
