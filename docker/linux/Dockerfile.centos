@@ -14,6 +14,7 @@ ARG CURA_BUILD_ENV_PATH=/srv/cura-build-environment
 ARG CURA_BUILD_ENV_WORK_DIR=/tmp/cura-build-environment
 ARG CURA_ARCUS_BRANCH_OR_TAG=master
 ARG CURA_SAVITAR_BRANCH_OR_TAG=master
+ARG CURA_PYNEST2D_BRANCH_OR_TAG=master
 
 # Create unprivileged user
 RUN groupadd -g 1000 ultimaker && \
@@ -87,6 +88,7 @@ ARG CURA_BUILD_ENV_BUILD_TYPE=Release
 ARG CURA_BUILD_ENV_PATH=/srv/cura-build-environment
 ARG CURA_ARCUS_BRANCH_OR_TAG=master
 ARG CURA_SAVITAR_BRANCH_OR_TAG=master
+ARG CURA_PYNEST2D_BRANCH_OR_TAG=master
 
 # Set environment variables
 ENV CURA_BUILD_ENV_BUILD_TYPE="${CURA_BUILD_ENV_BUILD_TYPE}" \
