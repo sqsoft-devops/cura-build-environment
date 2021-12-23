@@ -11,6 +11,9 @@ endif()
 if(NOT CURA_SAVITAR_BRANCH_OR_TAG)
     set(CURA_SAVITAR_BRANCH_OR_TAG "master")
 endif()
+if(NOT CURA_PYNEST2D_BRANCH_OR_TAG)
+    set(CURA_PYNEST2D_BRANCH_OR_TAG "master")
+endif()
 
 # This should care that our CMAKE_INSTALL_PREFIX is absolute at the end...
 get_filename_component(CMAKE_INSTALL_PREFIX
