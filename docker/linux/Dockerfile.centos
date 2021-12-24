@@ -25,14 +25,13 @@ RUN yum -y update && \
     yum install -y epel-release && \
     yum remove -y git && \
     yum update -y && \
-    yum install -y centos-release-scl-rh centos-release-scl && \
     yum update -y
 
 # Install dependencies
-RUN yum install -y \
-    devtoolset-8-gcc \
-    devtoolset-8-gcc-c++ \
-    devtoolset-8-gcc-gfortran \
+RUN yum install --enablerepo=powertools -y \
+    gcc \
+    gcc-c++ \
+    gcc-gfortran \
     cmake3 \
     curl \
     git222 \
@@ -104,15 +103,14 @@ RUN yum -y update && \
     yum install -y epel-release && \
     yum remove -y git && \
     yum update -y && \
-    yum install -y centos-release-scl-rh centos-release-scl && \
     yum update -y
 
 # Install dependencies
 # Note: In this cleaner image, install ONLY dependencies that Cura links dynamically to!
-RUN yum install -y \
-    devtoolset-8-gcc \
-    devtoolset-8-gcc-c++ \
-    devtoolset-8-gcc-gfortran \
+RUN yum install --enablerepo=powertools -y \
+    gcc \
+    gcc-c++ \
+    gcc-gfortran \
     cmake3 \
     curl \
     git222 \
