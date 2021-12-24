@@ -34,7 +34,7 @@ RUN yum install --enablerepo=powertools -y \
     gcc-gfortran \
     cmake3 \
     curl \
-    git222 \
+    git \
     libtool \
     make \
     file \
@@ -113,7 +113,7 @@ RUN yum install --enablerepo=powertools -y \
     gcc-gfortran \
     cmake3 \
     curl \
-    git222 \
+    git \
     gettext \
     doxygen \
     libtool \
