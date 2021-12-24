@@ -24,7 +24,6 @@ RUN groupadd -g 1000 ultimaker && \
 RUN yum -y update && \
     yum install -y epel-release && \
     yum remove -y git && \
-    rpm -U https://repo.ius.io/ius-release-el7.rpm && \
     yum update -y && \
     yum install -y centos-release-scl-rh centos-release-scl && \
     yum update -y
@@ -104,7 +103,6 @@ RUN groupadd -g 1000 ultimaker && \
 RUN yum -y update && \
     yum install -y epel-release && \
     yum remove -y git && \
-    rpm -U https://repo.ius.io/ius-release-el7.rpm && \
     yum update -y && \
     yum install -y centos-release-scl-rh centos-release-scl && \
     yum update -y
