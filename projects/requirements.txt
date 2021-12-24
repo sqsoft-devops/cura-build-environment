@@ -18,7 +18,8 @@ cx-Freeze==6.9 \
     --hash=sha256:c1c75df572858e623d0aa39771cd984c0abd8aacb43b2aca2d12d0bc95f25566 \
     --hash=sha256:fe4e32a0c75b2b54491882926bf3ba12f8a3d589822a68a8be7c09f1dcca5546 \
     --hash=sha256:ffc855eabc735b693e2d604d71dce6d52d78a6ba1070c55d51e786dd68ed232c
-cx-Logging==3.0 \
+cx-Logging==3.0; \
+    sys_platform!="darwin" \
     --hash=sha256:04e4b61e2636dc8ae135937655af6626362aefc7f6175e86888a244b61001823 \
     --hash=sha256:0df4be47c5022cc54316949e283403214568ef599817ced0c0972183d6d4fabb \
     --hash=sha256:1bf0ebc79a7baa331c7deaf57088c234b82710286dfad453ff0c55eee0122b72 \
