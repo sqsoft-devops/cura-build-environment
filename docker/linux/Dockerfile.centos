@@ -1,12 +1,12 @@
 # -------------------------------
 # Stage 1: Build cura-build-environment
 #
-FROM centos:centos7
+FROM centos:centos8
 
-LABEL linux_distro="centos7" \
+LABEL linux_distro="centos8" \
       architecture="amd64" \
-      python_version="3.8.10" \
-      qt_version="5.15.2"
+      python_version="3.10.0" \
+      qt_version="6.2.0"
 
 # Set build time arugments
 ARG CURA_BUILD_ENV_BUILD_TYPE=Release
@@ -78,10 +78,10 @@ RUN "${CURA_BUILD_ENV_WORK_DIR}"/src/docker/linux/build_centos.sh "${CURA_BUILD_
 #
 FROM centos:centos7
 
-LABEL linux_distro="centos7" \
+LABEL linux_distro="centos8" \
       architecture="amd64" \
-      python_version="3.8.10" \
-      qt_version="5.15.2"
+      python_version="3.10.0" \
+      qt_version="6.2.0"
 
 # Set build time arguments
 ARG CURA_BUILD_ENV_BUILD_TYPE=Release
