@@ -89,7 +89,6 @@ endif()
 
 if(LINUX)
     include(cmake/create-appimage.cmake)
-    include(cmake/sign-appimage.cmake)
 endif()
 
 if(WIN32)
