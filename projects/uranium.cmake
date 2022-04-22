@@ -16,7 +16,7 @@ GetFromEnvironmentOrCache(
             "A list of plugins to exclude from installation, should be separated by ','.")
 
 ExternalProject_Add(Uranium
-    GIT_REPOSITORY https://github.com/ultimaker/Uranium
+    GIT_REPOSITORY https://github.com/sqsoft-devops/Uranium
     GIT_TAG ${URANIUM_BRANCH_OR_TAG}
     CMAKE_GENERATOR ${CMAKE_GENERATOR}
     CMAKE_ARGS -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}

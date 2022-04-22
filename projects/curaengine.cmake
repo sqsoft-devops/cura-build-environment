@@ -17,7 +17,7 @@ GetFromEnvironmentOrCache(
             "The version of CuraEngine")
 
 ExternalProject_Add(CuraEngine
-        GIT_REPOSITORY https://github.com/ultimaker/CuraEngine
+        GIT_REPOSITORY https://github.com/sqsoft-devops/CuraEngine
         GIT_TAG ${CURAENGINE_BRANCH_OR_TAG}
         GIT_SHALLOW 1
         STEP_TARGETS update

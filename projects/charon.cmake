@@ -10,7 +10,7 @@ GetFromEnvironmentOrCache(
             "The name of the tag or branch to build for libCharon")
 
 ExternalProject_Add(Charon
-    GIT_REPOSITORY https://github.com/Ultimaker/libCharon
+    GIT_REPOSITORY https://github.com/sqsoft-devops/libCharon
     GIT_TAG ${CHARON_BRANCH_OR_TAG}
     CMAKE_GENERATOR ${CMAKE_GENERATOR}
     CMAKE_ARGS -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}

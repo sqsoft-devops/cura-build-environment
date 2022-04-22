@@ -10,7 +10,7 @@ GetFromEnvironmentOrCache(
             "The name of the tag or branch to build for cura-binary-data")
 
 ExternalProject_Add(cura-binary-data
-        GIT_REPOSITORY https://github.com/ultimaker/cura-binary-data
+        GIT_REPOSITORY https://github.com/sqsoft-devops/cura-binary-data
         GIT_TAG ${CURABINARYDATA_BRANCH_OR_TAG}
         GIT_SHALLOW 1
         STEP_TARGETS update

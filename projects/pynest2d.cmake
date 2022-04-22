@@ -10,7 +10,7 @@ GetFromEnvironmentOrCache(
             "The name of the tag (e.q.: v4.13.0), branch (e.q.: origin/CURA-8640) or commit hash (e.q.: 961dabf) for pynest2d")
 
 ExternalProject_Add(pynest2d
-        GIT_REPOSITORY https://github.com/Ultimaker/pynest2d.git
+        GIT_REPOSITORY https://github.com/sqsoft-devops/pynest2d.git
         GIT_TAG ${PYNEST2D_BRANCH_OR_TAG}
         CMAKE_GENERATOR ${CMAKE_GENERATOR}
         CMAKE_ARGS -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
