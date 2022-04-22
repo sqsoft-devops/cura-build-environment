@@ -1,0 +1,54 @@
+pipeline {
+    agent {label 'workerlinux'}
+
+    environment{
+        installer_files = fileExists './installer'
+        build_files = fileExists './build'
+    }
+
+    stages {
+        
+        stage ('Clean installer files') {            
+
+            when { expression { installer_files == 'true' } }
+            steps {
+                sh 'sudo rm -r ./installer'
+            }
+        }  
+
+        stage ('Clean build files') {            
+
+            when { expression { installer_files == 'true' } }
+            steps {
+                sh 'sudo rm -r ./build'
+            }
+        }
+
+        stage ('Run build') {
+            steps {
+                sh 'sudo ./linux_build.sh'
+            }
+        }
+
+        stage ('Signing') {
+            steps {
+                withCredentials([file(credentialsId: 'private_gpg', variable: 'GPG_PRIVATE_KEY')]) {
+    
+                    sh 'sudo gpg --batch --import $GPG_PRIVATE_KEY'
+                    sh 'sudo gpg --detach-sig --armor ./installer/installer/dist/Ultimaker-Cura-*.AppImage'
+                    sh 'sudo gpg --export -a --output ./installer/installer/dist/public_key.asc'
+                }
+            }
+        }
+
+    }
+    
+    post {
+        always {
+            archiveArtifacts artifacts: 'installer/installer/dist/Ultimaker-Cura-*.AppImage', fingerprint: true
+            archiveArtifacts artifacts: 'installer/installer/dist/Ultimaker-Cura-*.sha256sum', fingerprint: true
+            archiveArtifacts artifacts: 'installer/installer/dist/Ultimaker-Cura-*.asc', fingerprint: true
+        }
+    }
+
+}
