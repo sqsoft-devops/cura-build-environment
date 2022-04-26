@@ -1,0 +1,51 @@
+pipeline {
+    agent {label 'WSERVER1809'}
+
+    environment{
+        old_files = fileExists './windows-installers'
+        //old_containers = sh (script: 'docker ps -a -f name=cura-build-environment | wc -l', , returnStdout:true).trim()
+    }
+
+    stages {
+
+        stage ('Clean environment files') {            
+
+            when { expression { old_files == 'true' } }
+            steps {
+                bat 'powershell "rm -r -fo ./windows-installers"'
+            }
+        }
+
+        stage ('Run build') {
+            steps {
+                withCredentials([file(credentialsId: 'certificate_windows', variable: 'CERTIFICATE_WINDOWS')]) {
+
+                    bat 'powershell "Copy-Item %CERTIFICATE_WINDOWS% -Destination ./docker/windows/certificate.pfx"'
+
+                    bat 'powershell "./docker/windows/build.ps1"'
+
+                    bat 'powershell "Remove-Item ./docker/windows/certificate.pfx"'
+                }
+            }
+        }
+
+        stage ('Signing') {
+            steps {
+                withCredentials([file(credentialsId: 'certificate_windows', variable: 'CERTIFICATE_WINDOWS')]) {
+                
+                    bat 'powershell "signtool sign  /fd SHA256 /a /f %CERTIFICATE_WINDOWS% ./windows-installers/output/Ultimaker_Cura*"'
+
+                    bat 'powershell "./signing/windows_installer_exe_signing.ps1"'
+                }
+            }
+        }
+
+    }
+    
+    post {
+        always {
+            archiveArtifacts artifacts: 'windows-installers/output/', fingerprint: true
+        }
+    }
+
+}
