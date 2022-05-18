@@ -7,23 +7,23 @@ GetFromEnvironmentOrCache(
         DEFAULT
             win64
         DESCRIPTION
-            "postfix for the installer file name when a Windows build is made (default win64): Ultimaker-Cura-5.0.0-b+2-win64.exe")
+            "postfix for the installer file name when a Windows build is made (default win64): Zmorph-Divid-5.0.0-b+2-win64.exe")
 GetFromEnvironmentOrCache(
         NAME
             POSTFIX_OS_INSTALLER_FILENAME_LINUX
         DEFAULT
             linux
         DESCRIPTION
-            "postfix for the installer file name when a Windows build is made (default linux): Ultimaker-Cura-5.0.0-b+2-linux.AppImage")
+            "postfix for the installer file name when a Windows build is made (default linux): Zmorph-Divid-5.0.0-b+2-linux.AppImage")
 GetFromEnvironmentOrCache(
         NAME
             POSTFIX_OS_INSTALLER_FILENAME_MAC
         DEFAULT
             mac
         DESCRIPTION
-            "postfix for the installer file name when a Windows build is made (default mac): Ultimaker-Cura-5.0.0-b+2-mac.dmg")
+            "postfix for the installer file name when a Windows build is made (default mac): Zmorph-Divid-5.0.0-b+2-mac.dmg")
 
-set(INSTALLER_BASE_FILENAME "Ultimaker-Cura")
+set(INSTALLER_BASE_FILENAME "Zmorph-Divid")
 if(NOT CURA_BUILDTYPE STREQUAL "")
     string(REPLACE " " "_" CURA_BUILDTYPE_NO_SPACES "${CURA_BUILDTYPE}")
     set(INSTALLER_BASE_FILENAME ${INSTALLER_BASE_FILENAME}-${CURA_BUILDTYPE_NO_SPACES})

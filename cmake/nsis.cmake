@@ -18,14 +18,14 @@ add_custom_command(
             ${Python_EXECUTABLE} ${CMAKE_SOURCE_DIR}/packaging/NSIS/nsis-configurator.py
             ${ULTIMAKER_CURA_PATH}
             ${CMAKE_SOURCE_DIR}/packaging/NSIS/Ultimaker-Cura.nsi.jinja
-            "Ultimaker Cura"
-            "Ultimaker-Cura.exe"
+            "Zmorph-Divid"
+            "Zmorph-Divid.exe"
             ${CURA_VERSION_MAJOR}
             ${CURA_VERSION_MINOR}
             ${CURA_VERSION_PATCH}
             ${CURA_VERSION_BUILD}
-            "Ultimaker B.V."
-            "https://ultimaker.com"
+            "Zmorph"
+            "https://zmorph3d.com"
             ${CMAKE_SOURCE_DIR}/packaging/cura_license.txt
             LZMA
             ${CMAKE_SOURCE_DIR}/packaging/cura_banner_nsis.bmp

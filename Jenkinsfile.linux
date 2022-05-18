@@ -35,7 +35,7 @@ pipeline {
                 withCredentials([file(credentialsId: 'private_gpg', variable: 'GPG_PRIVATE_KEY')]) {
     
                     sh 'sudo gpg --batch --import $GPG_PRIVATE_KEY'
-                    sh 'sudo gpg --detach-sig --armor ./installer/installer/dist/Ultimaker-Cura-*.AppImage'
+                    sh 'sudo gpg --detach-sig --armor ./installer/installer/dist/Zmorph-Divid-*.AppImage'
                     sh 'sudo gpg --export -a --output ./installer/installer/dist/public_key.asc'
                 }
             }
@@ -45,9 +45,9 @@ pipeline {
     
     post {
         always {
-            archiveArtifacts artifacts: 'installer/installer/dist/Ultimaker-Cura-*.AppImage', fingerprint: true
-            archiveArtifacts artifacts: 'installer/installer/dist/Ultimaker-Cura-*.sha256sum', fingerprint: true
-            archiveArtifacts artifacts: 'installer/installer/dist/Ultimaker-Cura-*.asc', fingerprint: true
+            archiveArtifacts artifacts: 'installer/installer/dist/Zmorph-Divid-*.AppImage', fingerprint: true
+            archiveArtifacts artifacts: 'installer/installer/dist/Zmorph-Divid-*.sha256sum', fingerprint: true
+            archiveArtifacts artifacts: 'installer/installer/dist/Zmorph-Divid-*.asc', fingerprint: true
         }
     }
 

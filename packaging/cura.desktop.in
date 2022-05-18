@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=Ultimaker Cura
-Name[de]=Ultimaker Cura
+Name=Zmorph Divid
+Name[de]=Zmorph Divid
 GenericName=3D Printing Software
 GenericName[de]=3D-Druck-Software
-Comment=Cura converts 3D models into paths for a 3D printer. It prepares your print for maximum accuracy, minimum printing time and good reliability with many extra features that make your print come out great.
-Exec=Ultimaker-Cura %F
+Comment=Divid converts 3D models into paths for a 3D printer. It prepares your print for maximum accuracy, minimum printing time and good reliability with many extra features that make your print come out great.
+Exec=Zmorph Divid %F
 Icon=cura-icon
 Terminal=false
 Type=Application

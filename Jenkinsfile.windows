@@ -33,7 +33,7 @@ pipeline {
             steps {
                 withCredentials([file(credentialsId: 'certificate_windows', variable: 'CERTIFICATE_WINDOWS')]) {
 
-                    bat 'powershell "signtool sign  /fd SHA256 /a /f %CERTIFICATE_WINDOWS% ./windows-installers/output/Ultimaker_Cura*"'
+                    bat 'powershell "signtool sign  /fd SHA256 /a /f %CERTIFICATE_WINDOWS% ./windows-installers/output/Zmorph_Divid*"'
 
                     bat 'powershell "./signing/windows_installer_exe_signing.ps1"'
                 }
