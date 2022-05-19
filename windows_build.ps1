@@ -1,5 +1,6 @@
-mkdir installer
+mkdir installation
 mkdir build
 cd build 
-cmake -DCMAKE_PREFIX_PATH=../installer -DCMAKE_INSTALL_PREFIX=../installer -DCMAKE_BUILD_TYPE=Release ..
+cmd /k "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+cmake -G "NMake Makefiles" -DCMAKE_PREFIX_PATH=../installation -DCMAKE_INSTALL_PREFIX=../installation -DCMAKE_BUILD_TYPE=Release ..
 cmake --build .
