@@ -2,17 +2,26 @@ pipeline {
     agent {label 'WSERWER50'}
 
     environment{
-        old_files = fileExists './windows-installers'
+        old_files_installation = fileExists './installation'
+        old_files_build = fileExists './build'
         //old_containers = sh (script: 'docker ps -a -f name=cura-build-environment | wc -l', , returnStdout:true).trim()
     }
 
     stages {
 
-        stage ('Clean environment files') {            
+        stage ('Clean environment files old_files_installation') {            
 
-            when { expression { old_files == 'true' } }
+            when { expression { old_files_installation == 'true' } }
             steps {
-                bat 'powershell "rm -r -fo ./windows-installers"'
+                bat 'powershell "rm -r -fo ./installation"'
+            }
+        }
+
+        stage ('Clean environment files old_files_build') {            
+
+            when { expression { old_files_build == 'true' } }
+            steps {
+                bat 'powershell "rm -r -fo ./build"'
             }
         }
 
